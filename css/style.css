@@ -1,0 +1,831 @@
+
+/* font-family:'Proxima Nova Regular',sans-serif */
+/* font-family:'Proxima Nova Bold',sans-serif */
+
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Proxima Nova Regular",sans-serif;
+    
+}
+
+
+.wrap-burger
+{
+    position: absolute;
+    top:30px;
+    right: 20px;
+}
+.burger
+{
+    display: none;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 100;
+    outline: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.burger span
+{
+    width: 100%;
+    height: 10%;
+    display: block;
+    background-color: white;
+    position: absolute;
+    top:0;
+    z-index: 1;
+    transition: all .1s ease;
+}
+.burger span::before,.burger span:after
+{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    position: absolute;
+    transition: all .3s ease;
+}
+.burger span::before
+{
+    top:12px;
+}
+.burger span::after
+{
+    top:-12px;
+}
+
+.active span::before
+{
+    top:0;
+    transform: rotate(45deg);
+    border-radius: 100px;
+}
+
+.active span::after
+{
+    top:0;
+    transform: rotate(-45deg);
+    border-radius: 100px;
+}
+
+.active span
+{
+    
+    background-color: transparent;
+    
+}
+
+a, li, button 
+{
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    color: white;
+}
+
+.header 
+{
+    background: url(../img/bg.png) center center no-repeat;
+    background-size: cover;
+    padding-top: 2vh;
+    height: 110vh;
+    position: relative;
+}
+.header__container
+{
+    position: relative;
+}
+
+.container 
+{
+    max-width: 100%;
+    width: 900px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.center__title
+{
+    color: #bea67c;
+    font-size: 20vh;
+    text-align: center;
+    font-weight: 700;
+    line-height: 99.96px;
+    text-transform: uppercase;
+    /* Text style for "W, ooder" */
+    letter-spacing: 20.01px;
+    margin-top: 30vh;
+    margin-bottom: 9vh;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgba(190, 190, 190, 0.719);
+}
+.top__logo
+{
+    width: 50%;
+    color: #ffffff;
+    font-size: 5vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Text style for "W, ooder" */
+    letter-spacing: 10.8px;
+    display: flex;
+    justify-content: center
+}
+.logo
+{
+    position: relative;
+    padding: 1vh;
+    border: 2px double white;
+}
+.logo::before
+{
+    content: "";
+    width: 90%;
+    height: 8%;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    background-color: white;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.center__btn
+{
+    display: block;
+    text-align: center;
+}
+.btn
+{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 69.97px;
+    text-transform: uppercase;
+    /* Text style for "learn more" */
+    letter-spacing: 2.8px;
+    padding: 20px 85px;
+    border: 2px solid #ffffff;
+    transition: all .3s ease;
+}
+.btn:hover
+{
+    background-color: rgba(255, 255, 255, 0.966);
+    color:black;
+    opacity: .7;
+}
+.header__top
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.top__nav
+{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+.nav__link
+{
+    margin:5vh;
+    opacity: 0.5;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 27px;
+    text-transform: uppercase;
+    /* Text style for "Home" */
+    letter-spacing: 0.38px;
+    cursor:pointer;
+    position: relative;
+}
+.nav__link::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0vh;
+    height: 0.5vh;
+    background-color: white;
+    opacity: .4;
+    bottom: 0;
+    left: 0;
+    transition: all .3s ease;
+}
+
+.nav__link:hover:before
+{
+    width: 100%;
+}
+
+/* DECORATION */
+
+.decoration .first
+{
+    position: absolute;
+    bottom: -80px;
+    left: -90px;
+    font-size: 40vh;
+    opacity: 0.05;
+    color: white;
+    transform: rotate(15deg);
+}
+
+.mid
+{
+    position: absolute;
+    top: -80px;
+    right: -90px;
+    font-size: 40vh;
+    opacity: 0.05;
+    color: white;
+    transform: rotate(-15deg);
+}
+
+.last
+{
+    position: absolute;
+    bottom: -110px;
+    right: -150px;
+    font-size: 40vh;
+    opacity: 0.05;
+    color: white;
+    transform: rotate(-15deg);
+}
+
+
+/*  */
+
+/* burger menu */
+.burger-nav
+{
+    padding-left: 40px;
+    width: 0vh;
+    max-width: 100vh;
+    display: none;
+    background-color: black;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:100%;
+    transition: all .5s ease;
+}
+.menu-active
+{
+    left:0;
+    width: 100vh;
+    display: block;
+}
+.link
+{
+    display:block;
+    margin:25px;
+    font-size: 32px;
+    color:white;
+    font-weight: bold;
+    
+}
+
+/*  */
+
+
+/* furniture */
+
+.furniture
+{
+    padding-top:50px;
+}
+.furniture__left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+}
+.furniture-right
+{
+    width: 50%;
+}
+.fur-container
+{
+    width: 90%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* visibility - скрыть элемент либо отобразить */
+
+.fur-wrapper
+{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+}
+
+.title
+{
+    color: #010101;
+    font-size: 8vh;
+    font-weight: 900;
+    font-family:'Proxima Nova Bold',sans-serif;
+    line-height: 70px;
+    text-transform: uppercase;
+    /* Text style for "Furniture" */
+    letter-spacing: 3.36px;
+    position: relative;
+}
+.title::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 15%;
+    height: 1%;
+    top:47%;
+    left:-25%;
+    
+}
+.subtitle
+{
+    color: #464646e0;
+    font-size: 3.5vh;
+    font-weight: 400;
+    line-height: 25px;
+    /* Text style for "W, ooder u" */
+    letter-spacing: 0.38px;
+    position: relative;
+}
+.subtitle::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #bea67c;
+    width: 10%;
+    height: 4%;
+    top:47%;
+    left:-15%;
+}
+.more a
+{
+    color: #000000;
+    font-size: 3vh;
+    font-weight: 700;
+    line-height: 60px;
+    text-transform: uppercase;
+    /* Text style for "Learn more" */
+    letter-spacing: 2.8px;
+    font-family:'Proxima Nova Bold',sans-serif;
+    cursor: pointer;
+    position: relative;
+}
+.more a::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -6px;
+    left:0;
+    height: 5%;
+    width: 30%;
+    background-color: black;
+    transition: all .3s ease-in-out;
+}
+.more a:hover:before
+{
+    width: 100%;
+}
+.furniture-right img
+{
+    width: 100%;
+    max-width: 100%;
+    transition: all .5s ease;
+}
+
+.furniture-right img:hover
+{
+    transform: scale(1.07,1.07);
+}
+
+/* decor */
+
+.decor
+{
+    padding-top: 25vh;
+}
+.decor-left
+{
+    width: 50%;
+}
+.decor-right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 32%;
+    margin-left: 20vh;
+}
+.decor-wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.r-title
+{
+    color: #010101;
+    font-size: 8vh;
+    font-weight: 900;
+    font-family:'Proxima Nova Bold',sans-serif;
+    line-height: 70px;
+    text-transform: uppercase;
+    /* Text style for "Furniture" */
+    letter-spacing: 3.36px;
+    position: relative;   
+    text-align: left;
+}
+.r-title::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 15%;
+    height: 1%;
+    top:47%;
+    right:25%;
+}
+
+.r-subtitle
+{
+    color: #464646e0;
+    font-size: 3.5vh;
+    font-weight: 400;
+    line-height: 25px;
+    /* Text style for "W, ooder u" */
+    letter-spacing: 0.38px;
+    position: relative;
+}
+
+.decor-left img
+{
+    width: 100%;
+    max-width: 100%;
+    transition: all .5s ease;
+}
+.decor-left img:hover
+{
+    transform: scale(1.07,1.07);
+}
+
+.r-more a
+{
+    color: #000000;
+    font-size: 3vh;
+    font-weight: 700;
+    line-height: 60px;
+    text-transform: uppercase;
+    /* Text style for "Learn more" */
+    letter-spacing: 2.8px;
+    font-family:'Proxima Nova Bold',sans-serif;
+    cursor: pointer;
+    position: relative;
+
+}
+.r-more a::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -6px;
+    left:0;
+    height: 5%;
+    width: 30%;
+    background-color: black;
+    transition: all .3s ease-in-out;
+}
+.r-more a:hover:before
+{
+    width: 100%;
+}
+
+/*  */
+
+
+/* quality */
+
+.quality
+{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.head
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.head p 
+{
+    color: #636262;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25.03px;
+    /* Text style for "W, e creat" */
+    letter-spacing: 0.38px;
+    width: 50%;
+    display: block;
+    margin:0 auto;
+    position: relative;
+}
+
+.head p::before
+{
+    content: "";
+    width: 15%;
+    height: 10%;
+    background-color: rgb(173, 122, 63);
+    display: block;
+    position: absolute;
+    bottom:-25%;
+    left: 40%;
+    margin:0 auto;
+}
+
+.head h2
+{
+    color: #000000;
+    font-family:'Proxima Nova Bold',sans-serif;
+    font-size: 9vh;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Text style for "wooder ," */
+    letter-spacing: 3.36px;
+    line-height: 100px;
+}
+
+.video
+{
+    display: flex;
+    padding-top: 100px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.item-1
+{
+    width: calc(100%/4);
+    transition: all .3s ease;
+    position: relative;
+}
+.item-1 p
+{
+    display: none;
+}
+.item-1:hover
+{
+    transform: scale(0.95,0.95);
+}
+.item-1 .round
+{
+    width: 100%;
+    max-width: 100%;
+}
+
+.play
+{
+    box-shadow: 0 0 5px rgba(0,0,0,0.5); /* Параметры тени */
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    transition: all .3s ease;
+}
+.play:hover
+{
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+
+/*  */
+
+
+/* intro */
+
+
+.intro
+{
+    height: 100vh;
+    width: 100%;
+    background: url("/img/bg2.png") center no-repeat black;
+    background-size: cover;
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.intro::before
+{
+    content: url(../img/pl.png);
+    display: block;
+    position: absolute;
+    top: -10%;
+    right: 50%;
+    width: 10%;
+    cursor: pointer;
+}
+.intro__content
+{
+    padding: 10% 10% 15%;
+    border: 2px solid #bea67c;
+}
+.content__title
+{
+    color: #bea67c;
+    font-size: 4.5vh;
+    font-weight: 700;
+    line-height: 35px;
+    text-transform: uppercase;
+    /* Text style for "we Do the" */
+    letter-spacing: 1.2px;
+    margin-bottom: 25px;
+}
+.content__subtitle
+{
+    color: #ffffff;
+    font-size: 2.5vh;
+    font-weight: 400;
+    line-height: 20px;
+    /* Text style for "T, his is" */
+    letter-spacing: 0.38px;
+}
+.content__wrapper
+{
+    width: 57%;
+}
+.content__btn
+{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+.content__btn a img
+{
+    display: inline-block;
+    margin: 2px;
+    position: absolute;
+    left: 10px;
+    bottom: 11px;
+}
+.content__btn a
+{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 70px;
+    text-transform: uppercase;
+    /* Text style for "watch vide" */
+    letter-spacing: 2.8px;
+    padding:2.5vh 2.5vh 2.5vh 9vh ;
+    border: 2px solid #ffffff;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.content__btn a:hover
+{
+    background-color: darkslategray;
+    opacity: .7;
+}
+
+/*  */
+
+
+/* about */
+
+.about
+{
+    padding: 80px 0;
+}
+.about-wrapper
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-left img
+{
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+.about-left
+{
+    width: 50%;
+    margin: 50px;
+}
+.about-right
+{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-title
+{
+    color: #010101;
+    font-size: 8vh;
+    font-weight: 700;
+    line-height: 100px;
+    text-transform: uppercase;
+    /* Text style for "About us" */
+    letter-spacing: 3.36px;
+}
+.about-subtitle
+{
+    color: #464646;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    /* Text style for "W, e are a" */
+    letter-spacing: 0.38px;
+}
+
+.about-btn a
+{
+    color: #000000;
+    font-size: 3vh;
+    font-weight: 700;
+    line-height: 70px;
+    text-transform: uppercase;
+    /* Text style for "Learn more" */
+    letter-spacing: 2.8px;
+    display: block;
+    position: relative;
+}
+
+.about-btn a::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 12px;
+    left:0;
+    height: 3%;
+    width: 10%;
+    background-color: black;
+    transition: all .3s ease-in-out;
+}
+.about-btn a:hover:before
+{
+    width: 40%;
+}
+
+
+/*  */
+
+
+/* footer */
+
+.footer
+{
+    background-color: black;
+    padding: 25px;
+}
+.footer-logo a
+{
+    max-width: 20vh;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.footer-logo a p
+{
+    padding-left: 0;
+}
+
+/*  */

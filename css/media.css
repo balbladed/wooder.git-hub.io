@@ -1,0 +1,159 @@
+@media screen and (max-width:1200px)
+{
+    .center__title
+    {
+        font-size: 13vh;
+    }
+    .nav__link
+    {
+        margin: 3vh;
+    }
+}
+
+@media screen and (max-width:974px)
+{
+    .furniture__left,.decor-left
+    {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    
+    .furniture-right,.decor-right
+    {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .r-title
+    {
+        text-align: center
+        !important;
+    }
+    .r-title:before
+    {
+        display: none;
+    }
+    .head h2
+    {
+        font-size: 5vh;
+        line-height: 48px;
+    }
+    .head p
+    {
+        width: 80%;
+    }
+    .head p::before 
+    
+    {
+        height: 5%;
+    }
+    .about-left,.about-right
+    {
+        width: 80%;
+    }
+    .about-right
+    {
+        text-align: center;
+    }
+    .about-right a::before
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width:764px)
+{
+    .item-1
+    {
+        width: 60%;
+        display: block;
+        margin: 25px 5px auto;
+    }
+    
+    .content__wrapper
+    {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:564px)
+{
+    .burger
+    {
+        display: block;
+    }
+    .btn
+    {
+        padding: 15px 60px;
+    }
+    .top__nav
+    {
+        display: none;
+    }
+    .top__logo
+    {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .header__top
+    {
+        align-items: end;
+    }
+    .center__title
+    {
+        font-size: 10vh;
+    }
+    .logo
+    {
+        padding-left: 25px;
+    }
+    .header
+    {
+        padding-top: 4vh;
+    }
+    .top__logo a p
+    {
+        font-size: 3vh;
+    }
+    .wrap-burger
+    {
+        top:20px;
+    }
+    .title,.r-title
+    {
+        font-size: 5vh;
+    }
+    .subtitle,.r-subtitle
+    {
+        font-size: 3vh;
+    }
+    .content__wrapper
+    {
+        width: 100%;
+    }
+    .content__title
+    {
+        font-size: 3.5vh;
+    }
+    .about-title
+    {
+        font-size: 4.5vh;
+        line-height: 50px;
+    }
+}
+@media screen and (max-width:362px)
+{
+    .center__title
+    {
+        font-size: 8vh;
+        letter-spacing: 10px;
+    }
+    .logo
+    {
+        margin-right: 20px;
+    }
+}
